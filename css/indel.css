@@ -114,12 +114,29 @@
 
 }
 .search{
-	border-color: #e0e0e0;
-	border: 1px solid;
-	width: 294px;
-	height: 48px;
+	
+	width: 295px;
+	height: 50px;
 	float: right;
 	margin-top: 25px;
+	
+}
+.search1{
+	float: right;
+	font-family: 'iconfont';
+	font-size: 16px;
+	color: #b0b0b0;
+	line-height: 48px;
+	text-align: center;
+	background-color: #fafafa;
+	border: 1px solid #b0b0b0;
+	border-left: 0;
+}
+.search1:hover{
+	background-color: #ff6700;
+}
+.search2{
+	float: right;
 }
 
 
@@ -1095,4 +1112,13 @@ li:hover{
 .znyj_item:hover .znyj_tan{
 	bottom: 0;
 	opacity: 1;
+}
+.znyj_left:hover,.znyj_item:hover,.reping_bottom_item:hover,.neirong:hover,.shipin_bottom_1:hover,.znyj_itemtop:hover{
+	box-shadow: 0 7px 10px 5px #B9B9B9;
+	transform: translateY(-2px);
+	cursor: pointer;
+}
+.znyj_item5:hover{
+	box-shadow: 0 0 0 0;
+	transform: translateY(0);
 }
