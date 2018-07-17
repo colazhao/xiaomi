@@ -6,6 +6,8 @@
 	<link rel="icon" href="img/logo-footer.png" type="image/png">
 	<link rel="stylesheet" href="css/indel.css">
 	<link rel="stylesheet" href="css/public.css">
+	<script src="js/wanmeiyundongkuangjia.js"></script>
+	<script src="js/classname.js"></script>
 
 </head>
 <body>
@@ -90,11 +92,71 @@
 	<!-- 导航结束 -->
 
 	<!-- banner -->
-	<div class="banner">
-		<div class="banner_img">
+	<div id="banner" class="banner">
+		<div id="banner_img" class="banner_img">
 			<img src="img/banner.jpg" alt="">
 			<img src="img/banner2.jpg" alt="">
+			<img src="img/banner3.jpg" alt="">
+			<img src="img/banner4.jpg" alt="">
+			<img src="img/banner5.jpg" alt="">
+			<img src="img/banner6.jpg" alt="">
 		</div>
+		<script>
+			window.onload=function()
+			{
+				var oBan=document.getElementById('banner');
+				var oDiv=oBan.getElementsByTagName('div')[0];
+				var oImg=oDiv.getElementsByTagName('img');
+				var oOl=oBan.getElementsByTagName('ol')[0];
+				var oBtn=oOl.getElementsByTagName('li');
+
+				
+				var now=0;
+				for(var i=0;i<oBtn.length;i++)
+				{
+					oBtn[i].index=i;
+					oBtn[i].onclick=function()
+					{
+						now=this.index;
+						tab();
+					}
+					
+				}
+
+				function tab()
+				{
+					for(var i=0;i<oBtn.length;i++)
+						 {
+						 	oBtn[i].className='banner_dian1';
+						 }
+						oBtn[now].className='active';
+						// oUl.style.top=-384*this.index+'px';
+						startmove(oDiv,{left:-1226*now});
+				}
+
+				function next()
+				{
+					now++;
+					if(now==oBtn.length)
+					{
+						now=0;
+					}
+					tab();
+				}
+
+				var timer=setInterval(next,2000);
+
+				oDiv.onmouseover=function()
+				{
+					clearInterval(timer);
+				}
+				oDiv.onmouseout=function()
+				{
+					timer=setInterval(next,2000);
+				}
+				
+			}
+		</script>
 		<ul class="banner_nav">
 			<li>
 				<span class="baner_title">手机 电话卡</span>
@@ -148,13 +210,14 @@
 		</ul>
 		<div class="banner_btn banner_lbtn">&lt;</div>
 		<div class="banner_btn banner_rbtn">&gt;</div>
-		<div class="banner_dian">
-			<div class="banner_dian1"></div>
-			<div class="banner_dian1"></div>
-			<div class="banner_dian1"></div>
-			<div class="banner_dian1"></div>
-			<div class="banner_dian1"></div>
-		</div>
+		<ol class="banner_dian">
+			<li class="banner_dian1 active"></li>
+			<li class="banner_dian1"></li>
+			<li class="banner_dian1"></li>
+			<li class="banner_dian1"></li>
+			<li class="banner_dian1"></li>
+			<li class="banner_dian1"></li>
+		</ol>
 	</div>
 	<!-- banner结束 -->
 
